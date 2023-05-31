@@ -19,17 +19,22 @@ namespace TheReckoning
             Deck = deck;
         }
 
-        static void Shuffle(List<Carta> deck)
+        public static void Shuffle(List<Carta> deck, List<Carta> list)
         {
             Random random = new Random();
-            for(int i = deck.Count - 1; i > 0; i --)
+            for(int i = 6; i > 0; i --)
             {
-                int k = random.Next(i +1);
-                Carta temp = deck[i];
-                deck[i] = deck[k];
-                deck[k] = temp;
+                Carta choosenCard = null;
+                do
+                {
+                    int randomIndex = random.Next(i);
+                    choosenCard = list[randomIndex];
+
+                }while(choosenCard.QT <= 0);
+
+                deck.Add(choosenCard);
+                choosenCard.QT --;
             }
-            List<Carta> list = deck.GetRange(0,6);
         }
 
         public override string ToString()

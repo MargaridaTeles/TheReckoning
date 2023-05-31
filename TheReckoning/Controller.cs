@@ -34,7 +34,7 @@ namespace TheReckoning
                         view.ShowCards(list);
                         break;
                     case 2:
-                        view.ShowRandomCards(list, playerlist);
+                        view.ShowDeck();
                         break;
                     /*case 1:
                         InsertPlayer();

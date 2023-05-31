@@ -22,6 +22,12 @@ namespace TheReckoning
                 new Carta("Sharply Depressed", 4, 3, 3, 1),
                 new Carta("Blue Steel", 2, 2, 2, 2),
             };
+            var deck = new List<Carta>();
+            Player.Shuffle(deck, list);
+            foreach(Carta c in deck)
+            {
+                Console.WriteLine($"{c.Name}");
+            }
 
             List<Player> playerlist = new List<Player>()
             {
@@ -37,7 +43,7 @@ namespace TheReckoning
             IView view = new View(controller);
 
             // Start program
-            controller.Run(view);
+            //controller.Run(view);
         }
         
     }
