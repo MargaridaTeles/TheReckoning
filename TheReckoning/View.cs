@@ -5,6 +5,8 @@ namespace TheReckoning
 {
     public class View
     {
+
+    
         
     }
 }
