@@ -9,5 +9,6 @@ namespace TheReckoning
         void InvalidOption();
 
         void ShowCards(IEnumerable<Carta> cartas);
+        void ShowRandomCards(List<Carta> list, List<Player> listplayers);
     }
 }

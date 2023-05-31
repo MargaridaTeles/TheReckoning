@@ -19,6 +19,7 @@ namespace TheReckoning
             Console.WriteLine("Menu");
             Console.WriteLine("----");
             Console.WriteLine("1. Show Cards");
+            Console.WriteLine("2. Random Cards");
             Console.WriteLine("9. How To Play ");
             Console.WriteLine("0. Exit");
             Console.WriteLine("");
@@ -46,13 +47,27 @@ namespace TheReckoning
             Console.WriteLine();
         }
 
-        public void ShowInstructions()
+        public void ShowRandomCards(List<Carta> list, List<Player> players)
         {
-            Console.WriteLine("\n Hello and welcome to this rip off Magic game!");
-            Console.WriteLine("\n You and your opponenet will recieve ");
-
+            /*Random random = new Random();
+            for(int i = list.Count - 1; i > 0; i --)
+            {
+                int k = random.Next(i +1);
+                Carta temp = list[i];
+                list[i] = list[k];
+                list[k] = temp;
+            }*/
+            foreach(Player p in players)
+            {
+                Console.WriteLine("");
+                Console.WriteLine($"Player:{p.Name}");
+                Console.WriteLine($"Deck:");
+                foreach(Carta c in p.Deck)
+                {
+                    Console.WriteLine(c);
+                }
+            }
         }
-
         public int MainMenu(Carta carta)
         {
             throw new NotImplementedException();
