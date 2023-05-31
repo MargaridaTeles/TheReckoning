@@ -21,7 +21,7 @@ namespace TheReckoning
 
         public override string ToString()
         {
-            return $"{Name}/{MP}/{AP}/{DP}";
+            return $"{Name}/{MP}/{AP}/{DP}/{QT}";
         }
     }
 }

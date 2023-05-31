@@ -19,6 +19,7 @@ namespace TheReckoning
             Console.WriteLine("Menu");
             Console.WriteLine("----");
             Console.WriteLine("1. Show Cards");
+            Console.WriteLine("9. How To Play ");
             Console.WriteLine("0. Exit");
             Console.WriteLine("");
             Console.Write("> ");
@@ -43,6 +44,13 @@ namespace TheReckoning
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
             Console.WriteLine();
+        }
+
+        public void ShowInstructions()
+        {
+            Console.WriteLine("\n Hello and welcome to this rip off Magic game!");
+            Console.WriteLine("\n You and your opponenet will recieve ");
+
         }
 
         public int MainMenu(Carta carta)
