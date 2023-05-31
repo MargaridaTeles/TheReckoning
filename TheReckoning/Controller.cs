@@ -5,7 +5,13 @@ namespace TheReckoning
     public class Controller
     {
         private List<Carta> list;
-        /*public void Run(IView view)
+        private IView view;
+
+        public Controller(List<Carta> list)
+        {
+            this.list = list;
+        }
+        public void Run(IView view)
         {
             int input;
             this.view = view;
@@ -16,13 +22,16 @@ namespace TheReckoning
                 // 3 -> List players w/ score > x
                 // 4 -> Change player sorting criteria
                 // 0 -> Exit
-                input = view.MainMenu(playerOrder);
+                input = view.MainMenu();
 
                 switch (input)
                 {
                     case 0:
                         break;
                     case 1:
+                        view.ShowCards(list);
+                        break;
+                    /*case 1:
                         InsertPlayer();
                         break;
                     case 2:
@@ -35,13 +44,13 @@ namespace TheReckoning
                         break;
                     case 4:
                         ChangePlayerOrder();
-                        break;
+                        break;*/
                     default:
                         view.InvalidOption();
                         break;
                 }
             }
             while (input != 0);
-        }*/
+        }
     }
 }
