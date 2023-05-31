@@ -31,6 +31,9 @@ namespace TheReckoning
                     case 1:
                         view.ShowCards(list);
                         break;
+                    case 2:
+                        view.ShowRandomCards();
+                        break;
                     /*case 1:
                         InsertPlayer();
                         break;

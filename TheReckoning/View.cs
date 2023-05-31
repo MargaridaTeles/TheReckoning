@@ -19,6 +19,7 @@ namespace TheReckoning
             Console.WriteLine("Menu");
             Console.WriteLine("----");
             Console.WriteLine("1. Show Cards");
+            Console.WriteLine("2. Random Cards");
             Console.WriteLine("0. Exit");
             Console.WriteLine("");
             Console.Write("> ");
@@ -43,6 +44,17 @@ namespace TheReckoning
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
             Console.WriteLine();
+        }
+
+        public void ShowRandomCards()
+        {
+            //TESTE
+            for(int i = 0; i < 6; i++)
+            {
+                Random random = new Random();
+                int cartas_random = random.Next(0, 19);
+                Console.WriteLine($"{cartas_random}");
+            }
         }
 
         public int MainMenu(Carta carta)

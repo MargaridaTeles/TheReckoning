@@ -8,7 +8,6 @@ namespace TheReckoning
     {
         private static void Main()
         {
-            
             // List of cartas is our model
             List<Carta> list = new List<Carta>()
             {
