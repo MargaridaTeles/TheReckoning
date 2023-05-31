@@ -20,6 +20,7 @@ namespace TheReckoning
             Console.WriteLine("----");
             Console.WriteLine("1. Show Cards");
             Console.WriteLine("2. Random Cards");
+            Console.WriteLine("9. How To Play ");
             Console.WriteLine("0. Exit");
             Console.WriteLine("");
             Console.Write("> ");
