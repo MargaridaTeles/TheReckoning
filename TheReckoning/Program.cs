@@ -23,8 +23,15 @@ namespace TheReckoning
                 new Carta("Blue Steel", 2, 2, 2, 2),
             };
 
+            List<Player> playerlist = new List<Player>()
+            {
+                //Inserir Jogadores
+                new Player("Jogador1", 10, 0, list),
+                new Player("Jogador2", 10, 0, list),
+            };
+
             // Create controller
-            Controller controller = new Controller(list);
+            Controller controller = new Controller(list, playerlist);
 
             // Create view
             IView view = new View(controller);
@@ -32,5 +39,6 @@ namespace TheReckoning
             // Start program
             controller.Run(view);
         }
+        
     }
 }

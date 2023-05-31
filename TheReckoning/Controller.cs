@@ -5,11 +5,13 @@ namespace TheReckoning
     public class Controller
     {
         private List<Carta> list;
+        private List<Player> playerlist;
         private IView view;
 
-        public Controller(List<Carta> list)
+        public Controller(List<Carta> list, List<Player> playerlist)
         {
             this.list = list;
+            this.playerlist = playerlist;
         }
         public void Run(IView view)
         {
@@ -32,7 +34,7 @@ namespace TheReckoning
                         view.ShowCards(list);
                         break;
                     case 2:
-                        view.ShowRandomCards();
+                        view.ShowRandomCards(list, playerlist);
                         break;
                     /*case 1:
                         InsertPlayer();

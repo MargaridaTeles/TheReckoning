@@ -46,17 +46,27 @@ namespace TheReckoning
             Console.WriteLine();
         }
 
-        public void ShowRandomCards()
+        public void ShowRandomCards(List<Carta> list, List<Player> players)
         {
-            //TESTE
-            for(int i = 0; i < 6; i++)
+            /*Random random = new Random();
+            for(int i = list.Count - 1; i > 0; i --)
             {
-                Random random = new Random();
-                int cartas_random = random.Next(0, 19);
-                Console.WriteLine($"{cartas_random}");
+                int k = random.Next(i +1);
+                Carta temp = list[i];
+                list[i] = list[k];
+                list[k] = temp;
+            }*/
+            foreach(Player p in players)
+            {
+                Console.WriteLine("");
+                Console.WriteLine($"Player:{p.Name}");
+                Console.WriteLine($"Deck:");
+                foreach(Carta c in p.Deck)
+                {
+                    Console.WriteLine(c);
+                }
             }
         }
-
         public int MainMenu(Carta carta)
         {
             throw new NotImplementedException();
