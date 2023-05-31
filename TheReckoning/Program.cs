@@ -17,13 +17,13 @@ namespace TheReckoning
             };
 
             // Create controller
-            //Controller controller = new Controller(list);
+            Controller controller = new Controller(list);
 
             // Create view
-            //IView view = new UglyView(controller);
+            IView view = new View(controller);
 
             // Start program
-            //controller.Run(view);
+            controller.Run(view);
         }
     }
 }
