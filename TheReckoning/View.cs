@@ -66,15 +66,8 @@ namespace TheReckoning
             Console.WriteLine();
 
         }
-        public void Start()
-        {
-            Console.WriteLine("Inicia Jogo");
-            //Nos turnos 1 a 4 cada jogador tem MP igual a 1 até 4;
-            //A partir do turno 5 e os seguintes o MP = 5;
-            //Se o jogador tiver - de 6 cartas na mão vai tirar do topo do baralho.
-        }
 
-         private int round_number = 1;
+        private int round_number = 1;
         public void Start(List<Player> players, List<Carta> list)
         {
             Console.WriteLine("Inicia Jogo");
