@@ -49,10 +49,10 @@ namespace TheReckoning
                     case 3:
                         SortPlayers();
                         ShowPlayersWithScore();
-                        break;
-                    case 4:
-                        ChangePlayerOrder();
                         break;*/
+                    case 4:
+                        view.Tutorial();
+                        break;
                     default:
                         view.InvalidOption();
                         break;

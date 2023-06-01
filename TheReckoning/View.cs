@@ -96,13 +96,14 @@ namespace TheReckoning
         {
 
             Console.WriteLine("\n Welcome to The Reckoning! ");
-            Console.WriteLine("\n In this game you will have a deck of cards containing powerfull creatures that will battle against eachother! ");
+            Console.WriteLine("\n In this game you will have a deck of cards containing powerful creatures that will battle against each other! ");
             Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: How to win ");
             string userInput = Console.ReadLine();
 
             if (userInput == "1")
             {
-                Console.WriteLine("You chose 1. This is the first option.");
+                Console.WriteLine("You chose 1. Here is the introduction to Battle: ");
+                Console.WriteLine(" ");
                 // Display the message for choosing 1
             }
             else if (userInput == "2")
