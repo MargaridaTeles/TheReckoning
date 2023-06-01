@@ -6,6 +6,7 @@ namespace TheReckoning
 {
     class Program
     {
+
         private static void Main()
         {
             // List of cartas is our model
@@ -22,18 +23,24 @@ namespace TheReckoning
                 new Carta("Sharply Depressed", 4, 3, 3, 1),
                 new Carta("Blue Steel", 2, 2, 2, 2),
             };
-            var deck = new List<Carta>();
-            Player.Shuffle(deck, list);
+            /*var deck = new List<Carta>();
+            Deck.Shuffle(deck, list);
             foreach(Carta c in deck)
             {
                 Console.WriteLine($"{c.Name}");
-            }
+            }*/
+
+            List<Deck> decklist = new List<Deck>()
+            {
+                new Deck(list),
+                new Deck(list),
+            };
 
             List<Player> playerlist = new List<Player>()
             {
                 //Inserir Jogadores
-                new Player("Jogador1", 10, 0, list),
-                new Player("Jogador2", 10, 0, list),
+                new Player("Jogador1", 10, 0, decklist),
+                new Player("Jogador2", 10, 0, decklist),
             };
 
             // Create controller
@@ -43,7 +50,7 @@ namespace TheReckoning
             IView view = new View(controller);
 
             // Start program
-            //controller.Run(view);
+            controller.Run(view);
         }
         
     }

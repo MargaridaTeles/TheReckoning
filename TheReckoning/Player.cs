@@ -9,32 +9,14 @@ namespace TheReckoning
         public string Name { get; }
         public int HP { get; }
         public int MP { get; }
-        public List<Carta> Deck;
+        public List<Deck> Deck_cartas;
 
-        public Player(string name, int hp, int mp, List<Carta> deck)
+        public Player(string name, int hp, int mp, List<Deck> deck_cartas)
         {
             Name = name;
             HP = hp;
             MP = mp;
-            Deck = deck;
-        }
-
-        public static void Shuffle(List<Carta> deck, List<Carta> list)
-        {
-            Random random = new Random();
-            for(int i = 6; i > 0; i --)
-            {
-                Carta choosenCard = null;
-                do
-                {
-                    int randomIndex = random.Next(i);
-                    choosenCard = list[randomIndex];
-
-                }while(choosenCard.QT <= 0);
-
-                deck.Add(choosenCard);
-                choosenCard.QT --;
-            }
+            Deck_cartas = deck_cartas;
         }
 
         public override string ToString()
