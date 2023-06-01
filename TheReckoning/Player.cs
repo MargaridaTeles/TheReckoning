@@ -8,7 +8,7 @@ namespace TheReckoning
     {
         public string Name { get; }
         public int HP { get; }
-        public int MP { get; }
+        public int MP { get; set; }
         public List<Deck> Deck_cartas;
 
         public Player(string name, int hp, int mp, List<Deck> deck_cartas)
