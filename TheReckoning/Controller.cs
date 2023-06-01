@@ -19,10 +19,10 @@ namespace TheReckoning
             this.view = view;
             do
             {
-                // 1 -> Insert player
-                // 2 -> List all players
-                // 3 -> List players w/ score > x
-                // 4 -> Change player sorting criteria
+                // 1 -> Mostrar Cartas do jogo
+                // 2 -> Mostrar Mãos dos Jogadores
+                // 3 -> Iniciar Jogo
+                // 9 -> Tutorial
                 // 0 -> Exit
                 input = view.MainMenu();
 
