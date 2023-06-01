@@ -51,14 +51,14 @@ namespace TheReckoning
         {
             foreach(Player p in players)
             {
-                Console.WriteLine($"\nDeck {p.Name}:");
+                Console.WriteLine($"\nMão {p.Name}:");
                 var deck = new List<Carta>();
                 Deck.Shuffle(deck, list);
                 foreach(Carta c in deck)
                 {
                     Console.WriteLine($"{c.Name}");
                 }
-                
+
             }
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
