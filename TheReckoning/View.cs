@@ -66,6 +66,16 @@ namespace TheReckoning
 
         }
 
+        public void Tutorial()
+        {
+
+            Console.WriteLine("\n Welcome to The Reckoning! ");
+            Console.WriteLine("\n In this game you will have a deck of cards containing powerfull creatures that will battle against eachother! ");
+            Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: How to win ");
+            Console.ReadLine();
+
+        }
+
         public int MainMenu(Carta carta)
         {
             throw new NotImplementedException();
