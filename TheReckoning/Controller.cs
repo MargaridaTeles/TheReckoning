@@ -36,6 +36,9 @@ namespace TheReckoning
                     case 2:
                         view.ShowDeck(list, playerlist);
                         break;
+                    case 3:
+                        view.Start();
+                        break;
                     /*case 1:
                         InsertPlayer();
                         break;

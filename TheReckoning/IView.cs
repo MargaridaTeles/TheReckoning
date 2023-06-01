@@ -10,5 +10,6 @@ namespace TheReckoning
 
         void ShowCards(IEnumerable<Carta> cartas);
         void ShowDeck(List<Carta> list, List<Player> players);
+        void Start();
     }
 }
