@@ -90,11 +90,11 @@ namespace TheReckoning
                 }
             }
             round_number++;
+            Feiticos();
         }
 
         public void Tutorial()
         {
-
             Console.WriteLine("\n Welcome to The Reckoning! ");
             Console.WriteLine("\n In this game you will have a deck of cards containing powerful creatures that will battle against each other! ");
             Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: How to win ");
@@ -112,6 +112,37 @@ namespace TheReckoning
                 // Display the message for choosing 2
             }
 
+        }
+
+        public void Feiticos()
+        {
+            string userInput;
+            Console.WriteLine("--- Fase de Feitiços ---");
+            Console.WriteLine("Quantas cartas quer jogar? (DICA: tenha em atenção o seu MP)");
+            do
+            {
+                userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "1":
+                        Console.WriteLine("1 Carta");
+                        Ataque();
+                        break;
+                    case "2":
+                        Console.WriteLine("2 Carta");
+                        Ataque();
+                        break;
+                    default:
+                        Console.WriteLine("Insira um valor possivel");
+                        break;
+                }
+            }
+            while (userInput != "0");
+        }
+        public void Ataque()
+        {
+            Console.WriteLine("\n--- Fase de Ataque ---");
+            
         }
 
         public int MainMenu(Carta carta)

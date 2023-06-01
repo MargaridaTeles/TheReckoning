@@ -12,7 +12,6 @@ namespace TheReckoning
         void ShowDeck(List<Carta> list, List<Player> players);
 
         void Tutorial();
-
         void Start(List<Player> players, List<Carta> list);
     }
 }
