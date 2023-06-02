@@ -13,7 +13,7 @@ namespace TheReckoning
             Cartas = cartas;
         }
 
-        public static void Shuffle(List<Carta> deck, List<Carta> list)
+        /*public static void Shuffle(List<Carta> deck, List<Carta> list)
         {
             Random random = new Random();
             for(int i = 6; i > 0; i --)
@@ -29,7 +29,7 @@ namespace TheReckoning
                 deck.Add(choosenCard);
                 choosenCard.QT --;
             }
-        }
+        }*/
         
     }
 }

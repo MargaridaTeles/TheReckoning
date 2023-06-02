@@ -54,7 +54,7 @@ namespace TheReckoning
             {
                 Console.WriteLine($"\nMão {p.Name}:");
                 var deck = new List<Carta>();
-                Deck.Shuffle(deck, list);
+                //Deck.Shuffle(deck, list);
                 foreach(Carta c in deck)
                 {
                     Console.WriteLine($"{c.Name}");
@@ -116,9 +116,10 @@ namespace TheReckoning
 
         public void Feiticos()
         {
-            string userInput;
+            //string userInput;
             Console.WriteLine("--- Fase de Feitiços ---");
             Console.WriteLine("Quantas cartas quer jogar? (DICA: tenha em atenção o seu MP)");
+            /*  COLOCAR NO CONTROLLER
             do
             {
                 userInput = Console.ReadLine();
@@ -137,7 +138,7 @@ namespace TheReckoning
                         break;
                 }
             }
-            while (userInput != "0");
+            while (userInput != "0");*/
         }
         public void Ataque()
         {
