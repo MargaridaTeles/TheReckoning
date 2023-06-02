@@ -43,10 +43,6 @@ namespace TheReckoning
                     case 3:
                         view.Start(playerlist);
                         break;
-                    case 3:
-                        SortPlayers();
-                        ShowPlayersWithScore();
-                        break;*/
                     case 9:
                         view.Tutorial();
                         break;
