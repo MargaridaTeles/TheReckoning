@@ -50,7 +50,7 @@ namespace TheReckoning
                         SortPlayers();
                         ShowPlayersWithScore();
                         break;*/
-                    case 4:
+                    case 9:
                         view.Tutorial();
                         break;
                     default:

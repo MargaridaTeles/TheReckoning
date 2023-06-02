@@ -16,6 +16,8 @@ namespace TheReckoning
 
         public int MainMenu()
         {
+            Console.WriteLine("Welcome to the Reckoning!\nPlease press any key to enter the Menu!");
+            Console.ReadLine();
             Console.WriteLine("Menu");
             Console.WriteLine("----");
             Console.WriteLine("1. Show Cards");
@@ -94,23 +96,66 @@ namespace TheReckoning
 
         public void Tutorial()
         {
-
             Console.WriteLine("\n Welcome to The Reckoning! ");
             Console.WriteLine("\n In this game you will have a deck of cards containing powerful creatures that will battle against each other! ");
-            Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: How to win ");
-            string userInput = Console.ReadLine();
+            Console.ReadLine();
+            Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: 2 - How to win ");
+            
+            int option = GetOptionChoice();
 
-            if (userInput == "1")
+            if (option == 1)
             {
-                Console.WriteLine("You chose 1. Here is the introduction to Battle: ");
-                Console.WriteLine(" ");
+                Console.WriteLine("You choose 1. Here is the introduction to Battle: ");
+                Console.WriteLine("You hit like pew pew and hit hard like pow pow ");
                 // Display the message for choosing 1
-            }
-            else if (userInput == "2")
-            {
-                Console.WriteLine("You chose 2. This is the second option.");
+                Console.ReadLine();
+                
+                Console.WriteLine("Would you like to know the other tutorial? (yes/no)" );
+                string answer = Console.ReadLine();
+                      
+                
+                if (answer.Equals("yes", StringComparison.OrdinalIgnoreCase))
+
+                {
+
+                Console.WriteLine("Here is Option One: ...");
+
+                }  
+
+                }
+
+                else if (option == 2)
+
+                {
+
+                Console.WriteLine("You choose 2. This is the second option.");
+                Console.WriteLine(" Would you like to know the other tutorial? (yes/no)" );
+                string answer2 = Console.ReadLine();
+                // Display the message for choosing 1
                 // Display the message for choosing 2
+
+                if (answer2.Equals("yes", StringComparison.OrdinalIgnoreCase))
+            
+            {
+                Console.WriteLine("Here is Option One: ...");
             }
+
+            }
+        
+        static int GetOptionChoice()
+    {
+        int option;
+        while (true)
+        {
+            Console.Write("Enter your choice (1 or 2): ");
+            if (int.TryParse(Console.ReadLine(), out option) && (option == 1 || option == 2))
+            {
+                break;
+            }
+            Console.WriteLine("Invalid choice. Please enter 1 or 2.");
+        }
+        return option;
+    }
 
         }
 
