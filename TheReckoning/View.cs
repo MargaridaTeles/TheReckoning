@@ -48,14 +48,17 @@ namespace TheReckoning
         }
 
         private int round_number = 1;
-        public void Start(List<Player> players, List<Carta> list)
+        public void Start(List<Player> players)
         {
+            
             Console.WriteLine("Inicia Jogo");
             //Nos turnos 1 a 4 cada jogador tem MP igual a 1 até 4;
             //A partir do turno 5 e os seguintes o MP = 5;
             //Se o jogador tiver - de 6 cartas na mão vai tirar do topo do baralho.
             foreach(Player p in players)
             {
+                p.HandPlayer = controller.Draw(p.Deck_cartas);
+
                 if(round_number <= 4)
                 {
                     p.MP = round_number;

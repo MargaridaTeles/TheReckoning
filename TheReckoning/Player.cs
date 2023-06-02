@@ -10,6 +10,7 @@ namespace TheReckoning
         public int HP { get; }
         public int MP { get; set; }
         public List<Carta> Deck_cartas;
+        public List<Carta> HandPlayer;
 
         public Player(string name, int hp, int mp, List<Carta> deck_cartas)
         {
