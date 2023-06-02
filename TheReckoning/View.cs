@@ -19,7 +19,6 @@ namespace TheReckoning
             Console.WriteLine("Menu");
             Console.WriteLine("----");
             Console.WriteLine("1. Show Cards");
-            Console.WriteLine("2. Random Cards");
             Console.WriteLine("3. Start");
             Console.WriteLine("9. How To Play ");
             Console.WriteLine("0. Exit");
@@ -46,25 +45,6 @@ namespace TheReckoning
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
             Console.WriteLine();
-        }
-
-        public void ShowDeck(List<Carta> list, List<Player> players)
-        {
-            foreach(Player p in players)
-            {
-                Console.WriteLine($"\nMão {p.Name}:");
-                var deck = new List<Carta>();
-                //Deck.Shuffle(deck, list);
-                foreach(Carta c in deck)
-                {
-                    Console.WriteLine($"{c.Name}");
-                }
-
-            }
-            Console.WriteLine("\nPress any key to continue...");
-            Console.ReadKey();
-            Console.WriteLine();
-
         }
 
         private int round_number = 1;

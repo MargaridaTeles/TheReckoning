@@ -46,15 +46,8 @@ namespace TheReckoning
                 new Deck(list),
             };
 
-            List<Player> playerlist = new List<Player>()
-            {
-                //Inserir Jogadores
-                new Player("Jogador1", 10, 0, decklist),
-                new Player("Jogador2", 10, 0, decklist),
-            };
-
             // Create controller
-            Controller controller = new Controller(list, playerlist);
+            Controller controller = new Controller(list);
 
             // Create view
             IView view = new View(controller);
