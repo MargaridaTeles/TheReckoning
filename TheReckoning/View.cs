@@ -77,8 +77,8 @@ namespace TheReckoning
 
         public void Tutorial()
         {
-            Console.WriteLine("\n Welcome to The Reckoning! ");
-            Console.WriteLine("\n In this game you will have a deck of cards containing powerful creatures that will battle against each other! ");
+            Console.WriteLine("\nWelcome to The Reckoning! ");
+            Console.WriteLine("\nIn this game you will have a deck of cards containing powerful creatures that will battle against each other! ");
             Console.ReadLine();
             Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: 2 - How to win ");
             
@@ -110,7 +110,7 @@ namespace TheReckoning
                 {
 
                 Console.WriteLine("You choose 2. This is the second option.");
-                Console.WriteLine(" Would you like to know the other tutorial? (yes/no)" );
+                Console.WriteLine("Would you like to know the other tutorial? (yes/no)" );
                 string answer2 = Console.ReadLine();
                 // Display the message for choosing 1
                 // Display the message for choosing 2
