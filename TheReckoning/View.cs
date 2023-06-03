@@ -99,19 +99,13 @@ namespace TheReckoning
                       
                 
                 if (answer.Equals("yes", StringComparison.OrdinalIgnoreCase))
-
                 {
-
-                Console.WriteLine("Here is Option One: ...");
-
+                    Console.WriteLine("Here is Option One: ...");
                 }  
 
-                }
-
-                else if (option == 2)
-
-                {
-
+            }
+            else if (option == 2)
+            {
                 Console.WriteLine("You choose 2. This is the second option.");
                 Console.WriteLine(" Would you like to know the other tutorial? (yes/no)" );
                 string answer2 = Console.ReadLine();
@@ -119,27 +113,25 @@ namespace TheReckoning
                 // Display the message for choosing 2
 
                 if (answer2.Equals("yes", StringComparison.OrdinalIgnoreCase))
-            
-            {
-                Console.WriteLine("Here is Option One: ...");
-            }
-
+                {
+                    Console.WriteLine("Here is Option One: ...");
+                }
             }
         
-        static int GetOptionChoice()
-    {
-        int option;
-        while (true)
-        {
-            Console.Write("Enter your choice (1 or 2): ");
-            if (int.TryParse(Console.ReadLine(), out option) && (option == 1 || option == 2))
+            static int GetOptionChoice()
             {
-                break;
+                int option;
+                while (true)
+                {
+                    Console.Write("Enter your choice (1 or 2): ");
+                    if (int.TryParse(Console.ReadLine(), out option) && (option == 1 || option == 2))
+                    {
+                        break;
+                    }
+                    Console.WriteLine("Invalid choice. Please enter 1 or 2.");
+                }
+                return option;
             }
-            Console.WriteLine("Invalid choice. Please enter 1 or 2.");
-        }
-        return option;
-    }
 
         }
 
