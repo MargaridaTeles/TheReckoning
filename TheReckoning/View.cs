@@ -133,7 +133,7 @@ namespace TheReckoning
                     Console.WriteLine($"{c}");
                 }
                 Console.WriteLine("\n--- Fase de Feitiços ---");
-                Console.WriteLine("Quantas cartas quer jogar? (DICA: tenha em atenção o seu MP)");
+                Console.WriteLine("Que cartas quer jogar? (DICA: tenha em atenção o seu MP)");
                 string answer = Console.ReadLine();
             }
         }
