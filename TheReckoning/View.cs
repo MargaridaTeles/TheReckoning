@@ -37,45 +37,31 @@ namespace TheReckoning
             Console.WriteLine();*/
         }
 
-        public void ShowCards(IEnumerable<Carta> cartas)
-        {
-            Console.WriteLine();
-            foreach (Carta c in cartas)
-            {
-                Console.WriteLine($"-> {c}");
-            }
-            Console.WriteLine("\nPress any key to continue...");
-            Console.ReadKey();
-            Console.WriteLine();
-        }
-
         private int round_number = 1;
+        private string winner;
         public void Start(List<Player> players)
         {
-            
             Console.WriteLine("Inicia Jogo");
-            //Nos turnos 1 a 4 cada jogador tem MP igual a 1 até 4;
-            //A partir do turno 5 e os seguintes o MP = 5;
-            //Se o jogador tiver - de 6 cartas na mão vai tirar do topo do baralho.
-            foreach(Player p in players)
+            do
             {
-                p.HandPlayer = controller.Draw(p.Deck_cartas);
-
-                if(round_number <= 4)
+                /*foreach(Player p in players)
                 {
-                    p.MP = round_number;
-                    Console.WriteLine("MP igual a ronda");
-                    Console.WriteLine(p.MP);
+                    if(round_number <= 4)
+                    {
+                        p.MP = round_number;
+                        //Console.WriteLine("MP igual a ronda");
+                        Console.WriteLine(p.MP);
+                    }
+                    else
+                    {
+                        p.MP = 5;
+                        //Console.WriteLine("MP diferente da ronda");
+                        Console.WriteLine(p.MP);
+                    }
                 }
-                else
-                {
-                    p.MP = 5;
-                    Console.WriteLine("MP diferente da ronda");
-                    Console.WriteLine(p.MP);
-                }
-            }
-            round_number++;
-            Feiticos();
+                round_number++;*/
+                Feiticos(players);
+            }while(winner == null);
         }
 
         public void Tutorial()
@@ -134,32 +120,22 @@ namespace TheReckoning
             }
 
         }
-
-        public void Feiticos()
+        public void Feiticos(List<Player> players)
         {
-            //string userInput;
-            Console.WriteLine("--- Fase de Feitiços ---");
-            Console.WriteLine("Quantas cartas quer jogar? (DICA: tenha em atenção o seu MP)");
-            /*  COLOCAR NO CONTROLLER
-            do
+            //Mostrar mão do jogador à vez e perguntar que carta quer jogar
+            foreach(Player p in players)
             {
-                userInput = Console.ReadLine();
-                switch (userInput)
+                Console.WriteLine($"\n--- Mão do {p.Name}: ---");
+                Console.WriteLine();
+                foreach(Carta c in p.HandPlayer)
                 {
-                    case "1":
-                        Console.WriteLine("1 Carta");
-                        Ataque();
-                        break;
-                    case "2":
-                        Console.WriteLine("2 Carta");
-                        Ataque();
-                        break;
-                    default:
-                        Console.WriteLine("Insira um valor possivel");
-                        break;
+                    //controller.Draw(null);
+                    Console.WriteLine($"{c}");
                 }
+                Console.WriteLine("\n--- Fase de Feitiços ---");
+                Console.WriteLine("Quantas cartas quer jogar? (DICA: tenha em atenção o seu MP)");
+                string answer = Console.ReadLine();
             }
-            while (userInput != "0");*/
         }
         public void Ataque()
         {
