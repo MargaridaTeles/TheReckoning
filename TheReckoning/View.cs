@@ -51,13 +51,13 @@ namespace TheReckoning
                     {
                         p.MP = round_number;
                         //Console.WriteLine("MP igual a ronda");
-                        Console.WriteLine(p.MP);
+                        //Console.WriteLine(p.MP);
                     }
                     else
                     {
                         p.MP = 5;
                         //Console.WriteLine("MP diferente da ronda");
-                        Console.WriteLine(p.MP);
+                        //Console.WriteLine(p.MP);
                     }
                 }
                 round_number++;
@@ -121,13 +121,16 @@ namespace TheReckoning
             }
 
         }
+        private bool cartaValida = false;
         public void Feiticos(List<Player> players)
         {
             //Mostrar mão do jogador à vez e perguntar que carta quer jogar
             foreach(Player p in players)
             {
+                Console.WriteLine($"\nO {p.Name} tem {p.MP} de MP.");
                 Console.WriteLine($"\n--- Mão do {p.Name}: ---");
                 Console.WriteLine();
+                // QUERO GUARDAR ATRAVÉS DE NUMEROS
                 foreach(Carta c in p.HandPlayer)
                 {
                     //controller.Draw(null);
@@ -136,26 +139,38 @@ namespace TheReckoning
                 Console.WriteLine("\n--- Fase de Feitiços ---");
                 Console.WriteLine("Que cartas quer jogar? (DICA: tenha em atenção o seu MP)");
                 string answer = Console.ReadLine();
-
-                // ERRO(Mostra as mensagens para todas as cartas)
                 foreach(Carta c in p.HandPlayer)
                 {
                     if(answer == c.Name && p.MP >= c.MP)
                     {
-                        Console.WriteLine("O player jogou uma carta válida");
+                        cartaValida = true;
+                        p.ChoosedCards.Add(c);
                     }
                     else
                     {
-                        Console.WriteLine("Por favor escolha outra carta");
+                        cartaValida = false;
                     }
+                    Console.WriteLine();
                 }
+
+                if(cartaValida == true)
+                {
+                    Console.WriteLine("Carta inserida é válida");
+                }
+                else
+                {
+                    Feiticos(players);
+                }
+                Console.WriteLine();
+                Console.WriteLine(p.ChoosedCards.Count);
                 Ataque();
             }
         }
         public void Ataque()
         {
             Console.WriteLine("\n--- Fase de Ataque ---");
-            
+
+
         }
 
         public int MainMenu(Carta carta)
