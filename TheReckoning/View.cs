@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TheReckoning
 {
@@ -44,7 +45,7 @@ namespace TheReckoning
             Console.WriteLine("Inicia Jogo");
             do
             {
-                /*foreach(Player p in players)
+                foreach(Player p in players)
                 {
                     if(round_number <= 4)
                     {
@@ -59,7 +60,7 @@ namespace TheReckoning
                         Console.WriteLine(p.MP);
                     }
                 }
-                round_number++;*/
+                round_number++;
                 Feiticos(players);
             }while(winner == null);
         }
@@ -135,6 +136,20 @@ namespace TheReckoning
                 Console.WriteLine("\n--- Fase de Feitiços ---");
                 Console.WriteLine("Que cartas quer jogar? (DICA: tenha em atenção o seu MP)");
                 string answer = Console.ReadLine();
+
+                // ERRO(Mostra as mensagens para todas as cartas)
+                foreach(Carta c in p.HandPlayer)
+                {
+                    if(answer == c.Name && p.MP >= c.MP)
+                    {
+                        Console.WriteLine("O player jogou uma carta válida");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Por favor escolha outra carta");
+                    }
+                }
+                Ataque();
             }
         }
         public void Ataque()
