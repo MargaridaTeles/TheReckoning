@@ -8,8 +8,6 @@ namespace TheReckoning
 
         void InvalidOption();
 
-        void ShowCards(IEnumerable<Carta> cartas);
-
         void Tutorial();
         void Start(List<Player> players);
     }
