@@ -21,7 +21,6 @@ namespace TheReckoning
             Console.ReadLine();
             Console.WriteLine("Menu");
             Console.WriteLine("----");
-            Console.WriteLine("1. Show Cards");
             Console.WriteLine("3. Start");
             Console.WriteLine("9. How To Play ");
             Console.WriteLine("0. Exit");
@@ -58,6 +57,7 @@ namespace TheReckoning
                 }
                 round_number++;
                 Feiticos(players);
+                BuyingPhase(players);
             }while(winner == null);
         }
 
@@ -118,6 +118,7 @@ namespace TheReckoning
 
         }
         private bool cartaValida = false;
+        private List<Carta> shuffledDeck;
         public void Feiticos(List<Player> players)
         {
             //Mostrar mão do jogador à vez e perguntar que carta quer jogar
@@ -228,17 +229,42 @@ namespace TheReckoning
                     destruiu = true;
                     Console.WriteLine($"A carta {player1Card.Name} foi destruida");
                     players[0].ChoosenCards.Dequeue();
+                    players[0].HandPlayer.Remove(player1Card);
                 }
                 if(player2Card.DP <= 0)
                 {
                     destruiu = true;
                     Console.WriteLine($"A carta {player2Card.Name} foi destruida");
                     players[1].ChoosenCards.Dequeue();
+                    players[1].HandPlayer.Remove(player2Card);
                 }
 
             }while(destruiu = false);
             Console.WriteLine();
 
+        }
+
+        public void BuyingPhase(List<Player> players)
+        {
+            foreach(Player p in players)
+            {
+                Console.WriteLine($"{p.Name} deseja comprar carta? [S/N]");
+                string resposta = Console.ReadLine();
+                if(resposta == "S")
+                {
+                    Carta c = p.Deck[0];
+                    p.HandPlayer.Add(c);
+                    p.Deck.Remove(c);
+                    Console.WriteLine($"O {p.Name} comprou a carta {c}.\n");
+                }
+                else if(resposta == "N")
+                {
+                    Console.WriteLine($"O {p.Name} não comprou carta.\n");
+                }
+                else
+                    break;
+            }
+           
         }
 
         public int MainMenu(Carta carta)
