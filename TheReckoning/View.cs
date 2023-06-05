@@ -50,14 +50,10 @@ namespace TheReckoning
                     if(round_number <= 4)
                     {
                         p.MP = round_number;
-                        //Console.WriteLine("MP igual a ronda");
-                        //Console.WriteLine(p.MP);
                     }
                     else
                     {
                         p.MP = 5;
-                        //Console.WriteLine("MP diferente da ronda");
-                        //Console.WriteLine(p.MP);
                     }
                 }
                 round_number++;
@@ -138,12 +134,12 @@ namespace TheReckoning
                     contador++;
                     Console.WriteLine($"[{contador}] {c}");
                 }
-                bool deucerto = false;
+                bool valid = false;
                 string answer = String.Empty;
                 int index = 0;
                 Carta choosenCard = null;
                 // Validation Loop
-                while(!deucerto)
+                while(!valid)
                 {
                     Console.WriteLine("\n--- Fase de Feitiços ---");
                     bool haveMana = false;
@@ -163,8 +159,8 @@ namespace TheReckoning
                     answer = Console.ReadLine();
 
                     // Is number validation
-                    deucerto = int.TryParse(answer, out index);
-                    if(!deucerto)
+                    valid = int.TryParse(answer, out index);
+                    if(!valid)
                     {
                         Console.WriteLine("Input inválido");
                         continue;
@@ -178,7 +174,7 @@ namespace TheReckoning
                     }
                     catch (System.Exception)
                     {
-                        deucerto = false;
+                        valid = false;
                         Console.WriteLine("Index inválido");
                         continue;
                     }
@@ -186,27 +182,61 @@ namespace TheReckoning
                     // Mana validation
                     if(!(choosenCard.MP <= p.MP))
                     {
-                        deucerto = false;
+                        valid = false;
                         Console.WriteLine("Mana Insuficiente");
                         continue;
                     }
                     p.MP = p.MP - choosenCard.MP;
-                    p.ChoosedCards.Add(choosenCard);
+                    p.ChoosenCards.Enqueue(choosenCard);
                 }
-                Console.WriteLine($"{choosenCard.Name} foi escolhida");
-                Ataque(players);
+                //Console.WriteLine($"{choosenCard.Name} foi escolhida.");
             }
+            Ataque(players);
         }
+        private bool destruiu = false;
         public void Ataque(List<Player> players)
         {
             Console.WriteLine("\n--- Fase de Ataque ---");
             foreach(Player p in players)
             {
-                foreach(Carta c in p.ChoosedCards)
+                foreach(Carta c in p.ChoosenCards)
                 {
-                    Console.WriteLine(c.Name);
+                    Console.WriteLine($"O {p.Name} escolheu a carta {c.Name}");
                 }
             }
+            
+            do
+            {
+                Carta player1Card = players[0].ChoosenCards.Peek();
+                Carta player2Card = players[1].ChoosenCards.Peek();
+
+                Console.WriteLine("Antes");
+                Console.WriteLine(player1Card.DP);
+                Console.WriteLine(player2Card.DP);
+                Console.WriteLine();
+
+                player1Card.DP -= player2Card.AP;
+                player2Card.DP -= player1Card.AP;
+                
+                Console.WriteLine("Depois");
+                Console.WriteLine(player1Card.DP);
+                Console.WriteLine(player2Card.DP);
+                Console.WriteLine();
+
+                if(player1Card.DP <= 0)
+                {
+                    destruiu = true;
+                    Console.WriteLine($"A carta {player1Card.Name} foi destruida");
+                    players[0].ChoosenCards.Dequeue();
+                }
+                if(player2Card.DP <= 0)
+                {
+                    destruiu = true;
+                    Console.WriteLine($"A carta {player2Card.Name} foi destruida");
+                    players[1].ChoosenCards.Dequeue();
+                }
+
+            }while(destruiu = false);
             Console.WriteLine();
 
         }
@@ -215,5 +245,7 @@ namespace TheReckoning
         {
             throw new NotImplementedException();
         }
+        
+        
     }
 }

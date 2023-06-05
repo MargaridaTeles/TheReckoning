@@ -10,7 +10,7 @@ namespace TheReckoning
         public int HP { get; }
         public int MP { get; set; }
         public List<Carta> HandPlayer {get; set;}
-        public List<Carta> ChoosedCards {get; set;}
+        public Queue<Carta> ChoosenCards {get; set;}
 
         public List<Carta> Deck = new List<Carta>()
         {
@@ -67,7 +67,7 @@ namespace TheReckoning
             HP = hp;
             MP = mp;
             HandPlayer = new List<Carta>();
-            ChoosedCards = new List<Carta>();
+            ChoosenCards = new Queue<Carta>();
             Deck = Shuffle(Deck);
 
             for(int i=0; i < 6; i++)

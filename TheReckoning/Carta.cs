@@ -7,7 +7,7 @@ namespace TheReckoning
         public string Name { get; }
         public int MP { get; }
         public int AP { get; }
-        public int DP { get; }
+        public int DP { get; set;}
 
         public Carta(string name, int mp, int ap, int dp)
         {
