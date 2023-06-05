@@ -127,6 +127,7 @@ namespace TheReckoning
             //Mostrar mão do jogador à vez e perguntar que carta quer jogar
             foreach(Player p in players)
             {
+                int contador = 0;
                 Console.WriteLine($"\nO {p.Name} tem {p.MP} de MP.");
                 Console.WriteLine($"\n--- Mão do {p.Name}: ---");
                 Console.WriteLine();
@@ -134,42 +135,79 @@ namespace TheReckoning
                 foreach(Carta c in p.HandPlayer)
                 {
                     //controller.Draw(null);
-                    Console.WriteLine($"{c}");
+                    contador++;
+                    Console.WriteLine($"[{contador}] {c}");
                 }
-                Console.WriteLine("\n--- Fase de Feitiços ---");
-                Console.WriteLine("Que cartas quer jogar? (DICA: tenha em atenção o seu MP)");
-                string answer = Console.ReadLine();
-                foreach(Carta c in p.HandPlayer)
+                bool deucerto = false;
+                string answer = String.Empty;
+                int index = 0;
+                Carta choosenCard = null;
+                // Validation Loop
+                while(!deucerto)
                 {
-                    if(answer == c.Name && p.MP >= c.MP)
+                    Console.WriteLine("\n--- Fase de Feitiços ---");
+                    bool haveMana = false;
+                    foreach(Carta c in p.HandPlayer)
                     {
-                        cartaValida = true;
-                        p.ChoosedCards.Add(c);
+                        if(c.MP <= p.MP)
+                        {
+                            haveMana = true;
+                        }
                     }
-                    else
+                    if(!haveMana)
                     {
-                        cartaValida = false;
+                        Console.WriteLine("Não consegue jogar mais nenhuma carta");
+                        break;
                     }
-                    Console.WriteLine();
-                }
+                    Console.WriteLine("Que cartas quer jogar? (DICA: tenha em atenção o seu MP)");
+                    answer = Console.ReadLine();
 
-                if(cartaValida == true)
-                {
-                    Console.WriteLine("Carta inserida é válida");
+                    // Is number validation
+                    deucerto = int.TryParse(answer, out index);
+                    if(!deucerto)
+                    {
+                        Console.WriteLine("Input inválido");
+                        continue;
+                    }
+
+                    // Index validation
+                    try
+                    {
+                        index--;
+                        choosenCard = p.HandPlayer[index];
+                    }
+                    catch (System.Exception)
+                    {
+                        deucerto = false;
+                        Console.WriteLine("Index inválido");
+                        continue;
+                    }
+
+                    // Mana validation
+                    if(!(choosenCard.MP <= p.MP))
+                    {
+                        deucerto = false;
+                        Console.WriteLine("Mana Insuficiente");
+                        continue;
+                    }
+                    p.MP = p.MP - choosenCard.MP;
+                    p.ChoosedCards.Add(choosenCard);
                 }
-                else
-                {
-                    Feiticos(players);
-                }
-                Console.WriteLine();
-                Console.WriteLine(p.ChoosedCards.Count);
-                Ataque();
+                Console.WriteLine($"{choosenCard.Name} foi escolhida");
+                Ataque(players);
             }
         }
-        public void Ataque()
+        public void Ataque(List<Player> players)
         {
             Console.WriteLine("\n--- Fase de Ataque ---");
-
+            foreach(Player p in players)
+            {
+                foreach(Carta c in p.ChoosedCards)
+                {
+                    Console.WriteLine(c.Name);
+                }
+            }
+            Console.WriteLine();
 
         }
 
