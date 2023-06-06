@@ -25,7 +25,7 @@
 
 ## Descrição do Trabalho:
 
-A solução do nosso jogo está dividida em duas fases especificas. O menu de opções e a gameplay.
+A solução do nosso jogo está dividida em duas fases especificas. O menu de opções e o da gameplay.
 
 ![image](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/89bb3160-ec28-4fe5-85a7-e5b8e85b7eb8)
 
@@ -53,6 +53,8 @@ O jogador pode sair do programa.
 
 ### Referencias:
 https://stackoverflow.com/questions/273313/randomize-a-listt - Random List
+
+https://github.com/MargaridaTeles/TheReckoning - Link do Repositório
 
 
 ### UML
