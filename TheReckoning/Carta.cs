@@ -19,7 +19,7 @@ namespace TheReckoning
 
         public override string ToString()
         {
-            return $"{Name}/{MP}/{AP}/{DP}";
+            return $"{Name}/Mana Points: {MP}/AP: Attack Points {AP}/Defense Points: {DP}";
         }
     }
 }

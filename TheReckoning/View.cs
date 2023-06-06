@@ -134,7 +134,7 @@ namespace TheReckoning
                     contador++;
                     Console.WriteLine($"[{contador}] {c}");
                 }
-                bool valid = false;
+                bool                     valid = false;
                 string answer = String.Empty;
                 int index = 0;
                 Carta choosenCard = null;
