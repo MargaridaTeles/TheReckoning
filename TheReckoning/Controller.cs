@@ -10,6 +10,10 @@ namespace TheReckoning
         public Controller()
         {
         }
+        /// <summary>
+        /// Corre as views todas
+        /// </summary>
+        /// <param name="view"></param>
         public void Run(IView view)
         {
             List<Player> playerlist = new List<Player>()
@@ -44,13 +48,21 @@ namespace TheReckoning
             }
             while (input != 0);
         }
-
-        // Mostrar qual a carta que está em primeiro e guardar na "Mão" do player
+        /// <summary>
+        /// Corre todas as cartas existentes
+        /// </summary>
+        /// <param name="shuffledDeck">Lista de cartas existentes no Deck</param>
+        /// <returns></returns>
         public List<Carta> Draw(List<Carta> shuffledDeck)
         {
             return shuffledDeck;
         }
-
+        /// <summary>
+        /// Verifica se os players tem HP e se ainda tem cartas no deck
+        /// após isso finaliza o jogo
+        /// </summary>
+        /// <param name="players">Busca a lista de players</param>
+        /// <param name="winner">Booleana usada para finalizar loop</param>
         public void FinishGame(List<Player> players, bool winner)
         {
             if(players[0].HP <= 0 || players[1].HP <= 0)

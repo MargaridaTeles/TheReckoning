@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace TheReckoning
 {
+    /// <summary>
+    /// Interface da View
+    /// </summary>
     public interface IView
     {
         int MainMenu();
