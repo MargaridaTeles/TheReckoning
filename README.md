@@ -23,17 +23,17 @@
 - Desenvolveu o UML
 - Desenvolveu o Markdown
 
-### Descrição do Trabalho:
+## Descrição do Trabalho:
 
 A solução do nosso jogo está dividida em duas fases especificas. O menu de opções o a gameplay.
 
 ![image](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/89bb3160-ec28-4fe5-85a7-e5b8e85b7eb8)
 
-## Como jogar:
+### Como jogar:
 
 O jogador pode escolher se quer uma pequena introdução á jogabilidade do jogo, como regras bases e como as cartas ou monstros funcionam, ou então pode escolher informação quanto a como ganhar o jogo. Após concluir a leitura de um dos escolhidos tutoriais poderá ler o próximo se assim desejar ou voltar ao menu de opções.
 
-## Jogar
+### Jogar
 
 Neste jogo dois jogadores lutam entre si com um deck de vinte cartas. Cada carda tem três parâmetros específicos. MP ou Mana points, DP ou defense points e AP ou attack points. Os mana points são o que cada carta custa para puder ser jogada, logo se um jogador não tiver mana suficiente, não pode jogar a carta. Cada jogador inicia a primeira ronda com 1 MP e continuar a ganhar mais 1 MP até á quinta ronda onde para de receber MP e a partir daí tem sempre 5MP no começo de cada Ronda de feitiços.
 
