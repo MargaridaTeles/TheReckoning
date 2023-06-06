@@ -9,16 +9,18 @@
 
 **Margarida**:
 
--   Worked on leaderboard
--   Worked on Main Gameplay Loop
--   Worked cannon shooting and aiming
--   Worked on art
+-  Desenvolveu o loop do jogo
+-  Desenvolveu Fase de Feitiços
+-  Desenvolveu Fase de Ataque
+-  Desenvolveu Fase de Comprar Cartas
 
 **Henrique**:
 
--   Desenvolveu o tutorial  
--   
--   
+-  Desenvolveu o tutorial  
+-  Auxilio no desenvolvimento das diferentes Fases
+-  Gestão do Repositório
+-  Desenvolveu a UI
+-  Desenvolveu o UML
 -  Desenvolveu o Markdown
 
 ### Descrição do Trabalho:
@@ -30,3 +32,4 @@ A solução do nosso jogo está dividida em duas fases especificas.
 -   
 
 ### Referencias:
+https://stackoverflow.com/questions/273313/randomize-a-listt - Random List
