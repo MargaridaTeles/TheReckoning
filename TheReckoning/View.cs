@@ -15,6 +15,11 @@ namespace TheReckoning
             this.controller = controller;
         }
 
+        /// <summary>
+        /// Menu onde o jogador vai poder aceder ao Tutorial, 
+        /// começar a jogar ou então fechar o jogo
+        /// </summary>
+        /// <returns></returns>
         public int MainMenu()
         {
             Console.WriteLine("Welcome to the Reckoning!\nPlease press any key to enter the Menu!");
@@ -30,14 +35,21 @@ namespace TheReckoning
             return int.Parse(Console.ReadLine());
         }
 
+        /// <summary>
+        /// Caso o jogador não insira nenhuma das opções então mostra esta mensagem
+        /// </summary>
         public void InvalidOption()
         {
-            /*Console.WriteLine("\nInvalid option! Press any key to continue...");
+            Console.WriteLine("\nInvalid option! Press any key to continue...");
             Console.ReadKey();
-            Console.WriteLine();*/
+            Console.WriteLine();
         }
 
         private int round_number = 1;
+        /// <summary>
+        /// Inicializa o jogo, com as rondas e com as fases pedidas
+        /// </summary>
+        /// <param name="players">Lista de players</param>
         public void Start(List<Player> players)
         {
             bool winner = false;
@@ -77,7 +89,9 @@ namespace TheReckoning
 
             }
         }
-
+        /// <summary>
+        /// Mostra o Tutorial
+        /// </summary>
         public void Tutorial()
         {
             Console.WriteLine("\nWelcome to The Reckoning! ");
@@ -134,9 +148,14 @@ namespace TheReckoning
             }
 
         }
+        /// <summary>
+        /// Fase de Feitiços, onde o jogador vai poder escolher a carta que quer jogar
+        /// verificando se tem mana suficiente para isso.
+        /// </summary>
+        /// <param name="players">Lista de players</param>
         public void Feiticos(List<Player> players)
         {
-            //Mostrar mão do jogador à vez e perguntar que carta quer jogar
+            //Mostra mão do jogador à vez e perguntar que carta quer jogar
             foreach(Player p in players)
             {
                 int contador = 0;
@@ -152,6 +171,7 @@ namespace TheReckoning
                 string answer = String.Empty;
                 int index = 0;
                 Carta choosenCard = null;
+
                 // Validation Loop
                 while(!valid)
                 {
@@ -204,9 +224,15 @@ namespace TheReckoning
                     p.ChoosenCards.Enqueue(choosenCard);
                 }
             }
+            // Próxima fase
             Ataque(players);
         }
         private bool destruiu = false;
+        /// <summary>
+        /// Fase de Ataque, onde vai mostrar as cartas escolhidas na fase anterior
+        /// e batalhar entre elas, atualiza o HP da carta
+        /// </summary>
+        /// <param name="players"></param>
         public void Ataque(List<Player> players)
         {
             Carta player1Card;
@@ -256,7 +282,11 @@ namespace TheReckoning
             Console.WriteLine();
 
         }
-        
+        /// <summary>
+        /// Fase em que o jogador decide se quer comprar carta ou não, caso já não
+        /// se encontre com 6 cartas na mão
+        /// </summary>
+        /// <param name="players">Lista de players</param>
         public void BuyingPhase(List<Player> players)
         {
             foreach(Player p in players)

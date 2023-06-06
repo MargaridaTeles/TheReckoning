@@ -12,6 +12,11 @@ namespace TheReckoning
         public List<Carta> HandPlayer {get; set;}
         public Queue<Carta> ChoosenCards {get; set;}
 
+        /// <summary>
+        /// Cria as cartas na lista Deck
+        /// </summary>
+        /// <typeparam name="Carta"></typeparam>
+        /// <returns></returns>
         public List<Carta> Deck = new List<Carta>()
         {
             new Carta("Flying Wand", 1, 1, 1),
@@ -42,6 +47,11 @@ namespace TheReckoning
             new Carta("Blue Steel", 2, 2, 2),
         };
 
+        /// <summary>
+        /// Baralha o deck do jogador
+        /// </summary>
+        /// <param name="deck">Lista de cartas</param>
+        /// <returns>o deck baralhado</returns>
         private static List<Carta> Shuffle(List<Carta> deck)
         {
             List<Carta> shuffledDeck = new List<Carta>();
@@ -61,6 +71,12 @@ namespace TheReckoning
             return shuffledDeck;
         }
 
+        /// <summary>
+        /// Construtor do player com as caracteristicas especificas
+        /// </summary>
+        /// <param name="name">Nome do player</param>
+        /// <param name="hp">Vida do player</param>
+        /// <param name="mp">Custo disponível</param>
         public Player(string name, int hp, int mp)
         {
             Name = name;
@@ -70,6 +86,7 @@ namespace TheReckoning
             ChoosenCards = new Queue<Carta>();
             Deck = Shuffle(Deck);
 
+            // Adiciona as primeiras 6 cartas à mão de cada jogador.
             for(int i=0; i < 6; i++)
             {
                 Carta c = Deck[0];
@@ -77,7 +94,11 @@ namespace TheReckoning
                 Deck.Remove(c);
             }
         }
-
+        /// <summary>
+        /// Escreve para todos os players as caracteristicas dos players,
+        /// ou seja NAME, MP.
+        /// </summary>
+        /// <returns>As características do Player</returns>
         public override string ToString()
         {
             return $"{Name}/{HP}/{MP}";
