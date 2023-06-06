@@ -17,12 +17,12 @@ namespace TheReckoning
 
         public int MainMenu()
         {
-            Console.WriteLine("Bem vindo ao The Reckoning/nPor favor clica enter para o menu!");
+            Console.WriteLine("Bem vindo ao The Reckoning\nPor favor clica enter para o menu!");
             Console.ReadLine();
             Console.WriteLine("Menu");
             Console.WriteLine("----");
-            Console.WriteLine("3. Jogar");
-            Console.WriteLine("9. Como Jogar ");
+            Console.WriteLine("1. Jogar");
+            Console.WriteLine("2. Como Jogar ");
             Console.WriteLine("0. Sair");
             Console.WriteLine("");
             Console.Write("> ");

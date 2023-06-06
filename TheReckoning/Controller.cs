@@ -23,18 +23,18 @@ namespace TheReckoning
             this.view = view;
             do
             {
-                // 3 -> Iniciar Jogo
-                // 9 -> Tutorial
+                // 1 -> Iniciar Jogo
+                // 2 -> Tutorial
                 // 0 -> Exit
                 input = view.MainMenu();
                 switch (input)
                 {
                     case 0:
                         break;
-                    case 3:
+                    case 1:
                         view.Start(playerlist);
                         break;
-                    case 9:
+                    case 2:
                         view.Tutorial();
                         break;
                     default:
