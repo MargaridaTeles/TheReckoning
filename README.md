@@ -23,11 +23,13 @@
 - Desenvolveu o UML
 - Desenvolveu o Markdown
 
+
+
 ## Descrição do Trabalho:
 
 A solução do nosso jogo está dividida em duas fases especificas. O menu de opções e o da gameplay.
 
-![image](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/89bb3160-ec28-4fe5-85a7-e5b8e85b7eb8)
+![image](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/5de0ec3b-6129-4837-a96f-abf51691da4a)
 
 ### Como jogar:
 
@@ -59,5 +61,6 @@ https://github.com/MargaridaTeles/TheReckoning - Link do Repositório
 
 ### UML
 
-![LP1_PROJETO](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/407fdeb7-0740-4a3f-8ca6-fdaf2352d901)
+
+![LP1_PROJETO](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/10f49c36-3e9b-4bad-8599-2578d1cc936e)
 
