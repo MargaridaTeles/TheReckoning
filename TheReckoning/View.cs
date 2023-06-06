@@ -94,41 +94,68 @@ namespace TheReckoning
         /// </summary>
         public void Tutorial()
         {
-            Console.WriteLine("\nWelcome to The Reckoning! ");
-            Console.WriteLine("\nIn this game you will have a deck of cards containing powerful creatures that will battle against each other! ");
+            Console.WriteLine("\nBem vindo ao The Reckoning! ");
+            Console.WriteLine("\nNesta partida cada um dos jogadores possui um deck de vinte monstros poderosos! ");
             Console.ReadLine();
-            Console.WriteLine("What would you like to learn first? \n: 1 - Battle \n: 2 - How to win ");
+            Console.WriteLine("O que gostaria de aprender primeiro \n: 1 - Fase de Feitiços \n: 2 - Fase de Batalha \n ");
             
             int option = GetOptionChoice();
 
             if (option == 1)
             {
-                Console.WriteLine("You choose 1. Here is the introduction to Battle: ");
-                Console.WriteLine("You hit like pew pew and hit hard like pow pow ");
+                Console.WriteLine("\nA primeira fase de feitiços começa com o jogador já com 1 de MP, a partir dai pode escolher qual das 6 cartas iniciais pode jogar, se tiver MP suficientes. ");
+                Console.ReadLine();
+                Console.WriteLine("Depois de escolher é a vez do segundo jogador fazer o mesmo. A partir da primeira fase combate, todos os jogadores vao receber mais 1 de MP até á quinta ronda ");
                 // Display the message for choosing 1
                 Console.ReadLine();
                 
-                Console.WriteLine("Would you like to know the other tutorial? (yes/no)" );
+                Console.WriteLine("Gostarias de ler o segundo toturoial? (sim/nao)" );
                 string answer = Console.ReadLine();
                       
                 
-                if (answer.Equals("yes", StringComparison.OrdinalIgnoreCase))
+                if (answer.Equals("sim", StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine("Here is Option One: ...");
+                    Console.WriteLine("\nOpção 2 - Fase de batalha:\n ");
+                    Console.WriteLine("Na fase de batalha os jogadores combatem com as cartas que escolheram anteriormente na fase de feitiços.");
+                    Console.ReadLine();
+                    Console.WriteLine("Cada carda tem três parâmetros específicos. MP ou Mana points, DP ou defense points e AP ou attack points. Os mana points são o que cada carta custa para puder ser jogada, logo se um jogador não tiver mana suficiente, não pode jogar a carta");
+                    Console.ReadLine();
+                    Console.WriteLine("Se uma carta atacar diretamente um jogador que não tenha cartas, o AP da carta atacante é subtraído á vida total do jogador (ambos os jogadores têm dez pontos de vida total)");
+                    Console.ReadLine();
+                    Console.WriteLine("Se ambos os jogadores escolheram uma carta então o AP do das cartas é subtraído aos seus defense points (DP). Se o DP de uma carta chegar a zero então essa carda é destruída e retirada de jogo");
+                    Console.ReadLine();
+                    Console.WriteLine("Se uma carta tem 4 de AP e a carta que defende tem 2 de DP, a carta que defende morre e os restantes 2 de AP são subtraídos ao HP do jogador. Após a batalha os jogadores podem escolher se querem desistir da partida");
+                    Console.ReadLine();
                 }  
 
             }
             else if (option == 2)
             {
-                Console.WriteLine("You choose 2. This is the second option.");
-                Console.WriteLine("Would you like to know the other tutorial? (yes/no)" );
+                Console.WriteLine("\nNa fase de batalha os jogadores combatem com as cartas que escolheram anteriormente na fase de feitiços.");
+                Console.ReadLine();
+                Console.WriteLine("Cada carda tem três parâmetros específicos. MP ou Mana points, DP ou defense points e AP ou attack points. Os mana points são o que cada carta custa para puder ser jogada, logo se um jogador não tiver mana suficiente, não pode jogar a carta");
+                Console.ReadLine();
+                Console.WriteLine("Se uma carta atacar diretamente um jogador que não tenha cartas, o AP da carta atacante é subtraído á vida total do jogador (ambos os jogadores têm dez pontos de vida total)");
+                Console.ReadLine();
+                Console.WriteLine("Se ambos os jogadores escolheram uma carta então o AP do das cartas é subtraído aos seus defense points (DP). Se o DP de uma carta chegar a zero então essa carda é destruída e retirada de jogo");
+                Console.ReadLine();
+                Console.WriteLine("Se uma carta tem 4 de AP e a carta que defende tem 2 de DP, a carta que defende morre e os restantes 2 de AP são subtraídos ao HP do jogador. Após a batalha os jogadores podem escolher se querem desistir da partida");
+                Console.ReadLine();                
+                Console.WriteLine("Gostaria de ler o primeiro tutorial? (sim/nao)" );
                 string answer2 = Console.ReadLine();
                 // Display the message for choosing 1
                 // Display the message for choosing 2
 
-                if (answer2.Equals("yes", StringComparison.OrdinalIgnoreCase))
+                if (answer2.Equals("sim", StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine("Here is Option One: ...");
+                    Console.WriteLine("Opção 1 - Fase de feitiços: \n");
+                    Console.ReadLine();
+                    Console.WriteLine("A primeira fase de feitiços começa com o jogador já com 1 de MP, a partir dai pode escolher qual das 6 cartas iniciais pode jogar, se tiver MP suficientes. ");
+                    Console.ReadLine();
+                    Console.WriteLine("Depois de escolher é a vez do segundo jogador fazer o mesmo. A partir da primeira fase combate, todos os jogadores vao receber mais 1 de MP até á quinta ronda ");
+                    // Display the message for choosing 1
+                    Console.ReadLine();
+
                 }
             }
         
@@ -137,12 +164,12 @@ namespace TheReckoning
                 int option;
                 while (true)
                 {
-                    Console.Write("Enter your choice (1 or 2): ");
+                    Console.Write("Digite a sua resposta (1 ou 2): ");
                     if (int.TryParse(Console.ReadLine(), out option) && (option == 1 || option == 2))
                     {
                         break;
                     }
-                    Console.WriteLine("Invalid choice. Please enter 1 or 2.");
+                    Console.WriteLine("Escolha inválida. Escolha 1 ou 2.");
                 }
                 return option;
             }
