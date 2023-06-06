@@ -1,6 +1,6 @@
 # **TheReckoning - Linguagens de Programação 1**
 
-#### [](https://github.com/HienaDev/HeavyOrdnance#work-done-by)Trabalho desenvolvido por:
+#### Trabalho desenvolvido por:
 
 - Henrique Monteiro - a22202855
 - Margarida Teles - a22204247
@@ -25,7 +25,7 @@
 
 ## Descrição do Trabalho:
 
-A solução do nosso jogo está dividida em duas fases especificas. O menu de opções o a gameplay.
+A solução do nosso jogo está dividida em duas fases especificas. O menu de opções e a gameplay.
 
 ![image](https://github.com/MargaridaTeles/TheReckoning/assets/115217452/89bb3160-ec28-4fe5-85a7-e5b8e85b7eb8)
 
