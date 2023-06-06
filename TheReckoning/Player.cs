@@ -7,7 +7,7 @@ namespace TheReckoning
     public class Player
     {
         public string Name { get; }
-        public int HP { get; }
+        public int HP { get; set;}
         public int MP { get; set; }
         public List<Carta> HandPlayer {get; set;}
         public Queue<Carta> ChoosenCards {get; set;}

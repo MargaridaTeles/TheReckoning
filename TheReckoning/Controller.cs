@@ -27,7 +27,6 @@ namespace TheReckoning
                 // 9 -> Tutorial
                 // 0 -> Exit
                 input = view.MainMenu();
-
                 switch (input)
                 {
                     case 0:
@@ -51,5 +50,43 @@ namespace TheReckoning
         {
             return shuffledDeck;
         }
+
+        public void FinishGame(List<Player> players, bool winner)
+        {
+            if(players[0].HP <= 0 || players[1].HP <= 0)
+            {
+                winner = true;
+                Console.WriteLine("O jogo terminou");
+                Environment.Exit(0);
+            }
+            if(players[0].Deck.Count <= 0)
+            {
+                if(players[0].HP > players[1].HP)
+                {
+                    Console.WriteLine($"Quem venceu foi o {players[0].Name}");
+                }
+                else if(players[0].HP < players[1].HP)
+                {
+                    Console.WriteLine($"Quem venceu foi o {players[1].Name}");
+                }
+                winner = true;
+                Console.WriteLine($"Quem venceu foi o {players[1].Name}");
+                Environment.Exit(0);
+            }
+            else if (players[1].Deck.Count <= 0)
+            {   
+                if(players[1].HP > players[0].HP)
+                {
+                    Console.WriteLine($"Quem venceu foi o {players[1].Name}");
+                }
+                else if(players[1].HP < players[0].HP)
+                {
+                    Console.WriteLine($"Quem venceu foi o {players[0].Name}");
+                }
+                winner = true;
+                Console.WriteLine($"Quem venceu foi o {players[0].Name}");
+                Environment.Exit(0);
+            }
+        }
     }
-}
+} 
