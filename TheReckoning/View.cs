@@ -17,13 +17,13 @@ namespace TheReckoning
 
         public int MainMenu()
         {
-            Console.WriteLine("Welcome to the Reckoning!\nPlease press any key to enter the Menu!");
+            Console.WriteLine("Bem vindo ao The Reckoning/nPor favor clica enter para o menu!");
             Console.ReadLine();
             Console.WriteLine("Menu");
             Console.WriteLine("----");
-            Console.WriteLine("3. Start");
-            Console.WriteLine("9. How To Play ");
-            Console.WriteLine("0. Exit");
+            Console.WriteLine("3. Jogar");
+            Console.WriteLine("9. Como Jogar ");
+            Console.WriteLine("0. Sair");
             Console.WriteLine("");
             Console.Write("> ");
 
@@ -42,7 +42,7 @@ namespace TheReckoning
         {
             bool winner = false;
             controller.FinishGame(players, winner);
-            Console.WriteLine("--- Start Game ---");
+            Console.WriteLine("--- Iniciar Jogo ---");
             while(winner == false)
             {
                 foreach(Player p in players)
